@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 /* BEGIN auto-scroll page */
 
-var speed = 35000;
+var speed = 50000;
 var interval = null;  
  function start(){
     // //must put the  condition, if the interval not work
