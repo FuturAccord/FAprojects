@@ -1,0 +1,154 @@
+html,body {
+    background-color: #ececec;
+    font-family: 'Nunito', sans-serif !important;
+    font-weight: 200 !important;
+    overflow:hidden; /* Hide scrollbars */
+
+}
+img {
+width: 280px !important;
+height: 90px !important;
+margin: 15px 0;
+}
+
+*{
+margin: 0px;
+padding: 0px;
+}
+
+td {
+vertical-align: middle !important;
+}
+
+
+
+#s{
+font-size: 12px;
+margin:-10px 0;
+}
+tbody {
+font-size: 20px;
+font-weight: 650;
+}
+
+/* Begin style tatal  right & bottom  */
+.totalPorGestor {
+border-left: 1px solid #96948c;
+background-color: black;
+color: wheat;
+}
+td.totalPorGestor>table {
+color: wheat;
+}
+
+tr#dias {
+border-top: 2px solid #633e08 !important;
+/* padding-top: 22px !important; */
+background-color: #987226;
+color: wheat;
+border-bottom:  2px solid #633e08 !important;
+}
+#dias>td>table {
+color: wheat;
+}
+
+table#semana {
+background-color: black;
+margin: 0;
+border-radius: 3px;
+color: wheat;
+}
+/* Begin style tatal bottom  */
+
+/*begin header style*/
+.floatThead-container {
+margin-top: -50px !important;
+ background-color: #797979;
+}
+
+div#image {
+/* position: sticky; */
+/* top: 0px; */
+/* background-color: #191b33; */
+margin-bottom: 50px;
+}
+
+thead {
+/* height: 160px !important; */
+border: none !important;
+}
+
+tr.size-row {
+height: 0px !important;
+}
+
+thead>tr>th {
+padding-top: 20px!important;
+}
+
+thead>tr>th>h5>strong {color: beige;font-size: 23px !important;/* border: none; */}
+
+th {
+border-top: 0px !important;
+}
+#headTable>tr {border: -29px solid #cabc42;/* border-spacing: 10px !important; */}
+
+.table thead th {
+border-bottom: none !important;
+}
+
+th.floatThead-col {
+height: 0px !important;
+padding: 0px !important;
+}
+/* end header style */
+
+tr#g1>td {
+padding-top: 45px !important;
+}
+
+/* begin style pause/play autoScroll*/
+#manageScroll {
+position: fixed;
+top: 90px;
+left: 95% !important;
+display: inline;
+font-size: 20px;
+z-index: 1002;
+}
+
+.button{
+opacity: .1;
+color :wheat;
+font-size: 27px;
+transition: all ease-in-out .5s;
+}
+.button:hover{
+opacity: 1;
+cursor: pointer;
+}
+
+/* end style pause/play autoScroll*/
+
+/* begin input style */
+.inputs {
+width: 100px;
+text-align: center;
+background-color: transparent;
+border: none;
+font-weight: 650;
+color: #212529;
+}
+#dias input,.totalPorGestor input{
+color: wheat !important;
+}
+
+.inputs:hover {
+cursor: pointer;
+}
+
+/* begin input style */
+.pagosCumplitado{
+background-color: #ffb600;
+border-radius: 6px;
+}

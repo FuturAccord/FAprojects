@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos WeDeal</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600,900" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="css/min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="context text-center ">
+        <div id="image">
+            <img class="" src="./images/Wedeal_logo1.png " >
+        </div>
+        <div id="manageScroll" >
+            <i id ="play" onclick="start()" class="fas fa-play-circle button"></i>
+            <i id ="pause" onclick="pause()"  class="fas fa-pause-circle button"></i>
+        </div>
+
+        <table class="table sticky-header">
+                <thead>
+                    <th><h5><strong>Gestor</strong></h5></th>
+                    <th></th>
+
+                    <th><h5><strong>Lunes</strong></h5></th>
+                    <th><h5><strong>Martes</strong></h5></th>
+                    <th><h5><strong>Miércoles</strong></h5></th>
+                    <th><h5><strong>Jueves</strong></h5></th>
+                    <th><h5><strong>Viernes</strong></h5></th>
+
+                    <th class="totalPorGestor"><h5><strong>Total por gestor</strong></h5></th>
+                </thead>
+                <tr id="g1">
+                    <td><strong>Abdelhak<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g1-1 d1-1 " type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g1-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g1-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g1-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g1-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g1-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g1-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g1-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g1-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g1-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg1"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg1"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Adil<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g2-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g2-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g2-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g2-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g2-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g2-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g2-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g2-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g2-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g2-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg2"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg2"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Alia<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g3-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g3-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g3-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g3-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g3-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g3-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g3-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g3-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g3-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g3-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg3"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg3"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Amina<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g4-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g4-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g4-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g4-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g4-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g4-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g4-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g4-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g4-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g4-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg4"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg4"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Amine<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g5-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g5-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g5-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g5-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g5-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g5-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g5-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g5-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g5-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g5-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg5"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg5"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Driss<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g6-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g6-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g6-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g6-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g6-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g6-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g6-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g6-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g6-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g6-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg6"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg6"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Hind<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g7-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g7-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g7-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g7-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g7-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g7-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g7-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g7-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g7-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g7-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg7"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg7"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Inmaculada<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g8-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g8-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g8-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g8-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g8-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g8-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g8-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g8-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g8-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g8-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg8"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg8"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Jose Maria<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g9-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g9-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g9-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g9-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g9-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g9-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g9-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g9-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g9-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g9-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg9"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg9"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Sanae<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g10-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g10-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g10-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g10-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g10-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g10-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g10-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g10-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g10-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g10-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg10"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg10"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Souad<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g11-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g11-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g11-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g11-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g11-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g11-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g11-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g11-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g11-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g11-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg11"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg11"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Yahia<strong></td>
+                    <td>
+                        <table class="table table-borderless ">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g12-1 d1-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g12-2 d1-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g12-1 d2-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g12-2 d2-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless  ">
+                            <tr><td>  <input class="sumSemana-1 inputs g12-1 d3-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g12-2 d3-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g12-1 d4-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g12-2 d4-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class="sumSemana-1 inputs g12-1 d5-1" type="text" name="" value="0"  id=""></td></tr>
+                            <tr><td>€<input class="sumSemana-2 inputs g12-2 d5-2" type="text" name="" value="0"  id=""></td></tr>
+                        </table>
+                    </td>
+                    <td class="totalPorGestor">
+                        <table class="table table-borderless">
+                            <tr><td> <input class=" inputs" readonly="true"  type="text" value="0" name="" id="tpg12"></td></tr>
+                            <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg12"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr id="dias">
+                    <td><strong>Total por día<strong></td>
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td><span id='s'>Pagos</span></td></tr>
+                            <tr><td><span id='s'>total</span></td></tr>
+                        </table>
+                    </td>
+                    <!-- dia 1 -->
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class=" inputs tsemana-1" readonly="true"  type="text" value="0" name="" id="tpd1"></td></tr>
+                            <tr><td>€<input class=" inputs tsemana-2 " readonly="true" type="text" name="" value="0"  id="tmd1"></td></tr>
+                        </table>
+                    </td>
+                    <!-- dia 2 -->
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class=" inputs tsemana-1" readonly="true"  type="text" value="0" name="" id="tpd2"></td></tr>
+                            <tr><td>€<input class=" inputs tsemana-2 " readonly="true" type="text" name="" value="0"  id="tmd2"></td></tr>
+                        </table>
+                    </td>
+                    <!-- dia 3 -->
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class=" inputs tsemana-1" readonly="true"  type="text" value="0" name="" id="tpd3"></td></tr>
+                            <tr><td>€<input class=" inputs tsemana-2 " readonly="true" type="text" name="" value="0"  id="tmd3"></td></tr>
+                        </table>
+                    </td>
+                    <!-- dia 4 -->
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class=" inputs tsemana-1" readonly="true"  type="text" value="0" name="" id="tpd4"></td></tr>
+                            <tr><td>€<input class=" inputs tsemana-2 " readonly="true" type="text" name="" value="0"  id="tmd4"></td></tr>
+                        </table>
+                    </td>
+                    <!-- dia 5 -->
+                    <td>
+                        <table class="table table-borderless">
+                            <tr><td>  <input class=" inputs tsemana-1" readonly="true"  type="text" value="0" name="" id="tpd5"></td></tr>
+                            <tr><td>€<input class=" inputs tsemana-2 " readonly="true" type="text" name="" value="0"  id="tmd5"></td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table id="semana" class="table table-borderless">
+                            <tr><td>  <input class="inputs " readonly="readonly="true"true"  type="text" value="0" name="" id="tpsemana"></td></tr>
+                            <tr><td>€<input class="inputs " readonly="treadonly="true"rue" type="text" name="" value="0"  id="tmsemana"></td></tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.2.1/jquery.floatThead.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.2.1/jquery.floatThead.min.js"></script>
+        <script src="js/min.js"></script> 
+
+</body>
+</html>
