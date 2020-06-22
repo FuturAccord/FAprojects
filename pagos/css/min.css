@@ -5,6 +5,9 @@ html,body {
     overflow:hidden; /* Hide scrollbars */
 
 }
+table{
+    margin-bottom: 0rem !important;
+}
 img {
 width: 280px !important;
 height: 90px !important;
