@@ -108,18 +108,20 @@ padding-top: 45px !important;
 }
 
 /* begin style pause/play autoScroll*/
-#manageScroll {
+.manageScroll {
 position: fixed;
 top: 90px;
-left: 95% !important;
+left: 97% !important;
 display: inline;
 font-size: 20px;
 z-index: 1002;
+} 
+svg#pause {
+    display:none;
 }
-
 .button{
-opacity: .1;
-color :wheat;
+opacity: .5;
+color :red;
 font-size: 27px;
 transition: all ease-in-out .5s;
 }
@@ -152,3 +154,22 @@ cursor: pointer;
 background-color: #ffb600;
 border-radius: 6px;
 }
+
+
+
+/* div#rank {
+    position: fixed;
+    bottom: 0;
+    background-color: red;
+} */
+
+/* style nuber of rank*/
+/* span.rank {
+    display: block;
+    background-color: #4d19ab;
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+    margin: 0 auto;
+    color: #FFF59D;
+} */

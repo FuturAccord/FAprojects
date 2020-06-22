@@ -7,335 +7,106 @@ $(document).ready(function(){
 
 /* BEGIN auto-scroll page */
 
-var speed = 50000;
+var speed = 50000; 
 var interval = null;  
- function start(){
+
+function start(){
     // //must put the  condition, if the interval not work
+    // if(!started){
+
     if (interval) {
         clearInterval(interval);
-     }
+    }
     //calling the scroll function
     scroll();
-
+    
     //Hide And Diseable the scrolBar
     $('body').css('overflow',"hidden");
     $('html').css('overflow',"hidden");
-
+    $('#play').css("display","none");
+    $('#pause').css("display", "inline");
+    // $('#pause').css("color","gray");
     interval = setInterval(scroll, speed * 2);
-}
-
+    started = true;
+         
+} 
+  
 // pause the autoScroll
+
 function pause(){
-
+    $('html, body').stop();
     clearInterval(interval);
-    interval = null;
+    $('#pause').css("display","none");
+    $('#play').css("display", "inline");
 
-    //enable scrollBar
-    $('html').css('overflow-y',"visible");
-    $('body').css('overflow-y',"visible");
+    
 } 
 
 //scroll function
 function scroll() {
-
-    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
-        $(this).animate({ scrollTop: 0 }, speed);
-    });
+    //  $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
+    //     $(this).animate({ scrollTop: 0 }, speed);
+    // });
+    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed,function(){$(this).animate({ scrollTop: 0 }, speed);});
 }
 /* END auto-scroll page */
 
 /* BEGIN sum  of input values */
-$(document).on("change", ".g1-1", function() {
-    var sum = 0;
-    $(".g1-1").each(function(){
-        sum += +$(this).val();
+
+/* BEGIN total of each gestor */
+for (let i = 1; i <= 12; i++) {
+    
+    $(document).on("change", ".g"+i+"-1" , function() {
+        var sum = 0;
+        $(".g"+i+"-1").each(function(){
+            sum += +$(this).val();
+        });
+        
+        $("#tpg"+i).val(sum);
     });
-
-    $("#tpg1").val(sum);
-});
-$(document).on("change", '.g1-2', function(){
-    var sum = 0;
-    $(".g1-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg1").val(sum.toFixed(2));
-});
-// g2
-$(document).on("change", ".g2-1", function() {
-    var sum = 0;
-    $(".g2-1").each(function(){
-        sum += +$(this).val();
+    
+    $(document).on("change", ".g"+i+"-2", function(){
+        var sum = 0;
+        $(".g"+i+"-2").each(function(){
+            sum += +$(this).val();
+        })
+        
+        $("#tmg"+i).val(sum.toFixed(2));
+        // for (let j = 1; j <= 12; j++) { 
+        //     if(i = j)
+        //         continue;
+        //     else{
+ 
+        //     }
+        // }
     });
+}
+/* END total of each gestor */
 
-    $("#tpg2").val(sum);
-});
-$(document).on("change", '.g2-2', function(){
-    var sum = 0;
-    $(".g2-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg2").val(sum.toFixed(2));
-});
-// g3
-$(document).on("change", ".g3-1", function() {
-    var sum = 0;
-    $(".g3-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg3").val(sum);
-});
-$(document).on("change", '.g3-2', function(){
-    var sum = 0;
-    $(".g3-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg3").val(sum.toFixed(2));
-});
- // g4
-$(document).on("change", ".g4-1", function() {
-    var sum = 0;
-    $(".g4-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg4").val(sum);
-});
-$(document).on("change", '.g4-2', function(){
-    var sum = 0;
-    $(".g4-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg4").val(sum.toFixed(2));
-});
- // g5
- $(document).on("change", ".g5-1", function() {
-    var sum = 0;
-    $(".g5-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg5").val(sum);
-});
-$(document).on("change", '.g5-2', function(){
-    var sum = 0;
-    $(".g5-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg5").val(sum.toFixed(2));
-});
- // g6
- $(document).on("change", ".g6-1", function() {
-    var sum = 0;
-    $(".g6-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg6").val(sum);
-});
-$(document).on("change", '.g6-2', function(){
-    var sum = 0;
-    $(".g6-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg6").val(sum.toFixed(2));
-});
-// g7
-$(document).on("change", ".g7-1", function() {
-    var sum = 0;
-    $(".g7-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg7").val(sum);
-});
-$(document).on("change", '.g7-2', function(){
-    var sum = 0;
-    $(".g7-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg7").val(sum.toFixed(2));
-});
-// g8
-$(document).on("change", ".g8-1", function() {
-    var sum = 0;
-    $(".g8-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg8").val(sum);
-});
-$(document).on("change", '.g8-2', function(){
-    var sum = 0;
-    $(".g8-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg8").val(sum.toFixed(2));
-});
-// g9
-$(document).on("change", ".g9-1", function() {
-    var sum = 0;
-    $(".g9-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg9").val(sum);
-});
-$(document).on("change", '.g9-2', function(){
-    var sum = 0;
-    $(".g9-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg9").val(sum.toFixed(2));
-});
-// g10
-$(document).on("change", ".g10-1", function() {
-    var sum = 0;
-    $(".g10-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg10").val(sum);
-});
-$(document).on("change", '.g10-2', function(){
-    var sum = 0;
-    $(".g10-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg10").val(sum.toFixed(2));
-});
-// g11
-$(document).on("change", ".g11-1", function() {
-    var sum = 0;
-    $(".g11-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg11").val(sum);
-});
-$(document).on("change", '.g11-2', function(){
-    var sum = 0;
-    $(".g11-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg11").val(sum.toFixed(2));
-});
-// g12
-$(document).on("change", ".g12-1", function() {
-    var sum = 0;
-    $(".g12-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpg12").val(sum);
-});
-$(document).on("change", '.g12-2', function(){
-    var sum = 0;
-    $(".g12-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmg12").val(sum.toFixed(2));
-});
-
+/* BEGIN total of each day */
 var totalSemana = 0;
-// d1
- $(document).on("change", ".d1-1", function() {
-    var sum = 0;
-
-    $(".d1-1").each(function(){
-        sum += +$(this).val();
+for (let i = 1; i <= 5; i++) { 
+ 
+    $(document).on("change", ".d"+i+"-1", function() {
+        var sum = 0;
+        
+        $(".d"+i+"-1").each(function(){
+            sum += +$(this).val();
+        });
+        
+        $("#tpd"+i).val(sum);
     });
-
-    $("#tpd1").val(sum);
-});
-$(document).on("change", '.d1-2', function(){
-    var sum = 0;
-    $(".d1-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmd1").val(sum.toFixed(2));
-});
-// d2
-$(document).on("change", ".d2-1", function() {
-    var sum = 0;
-    $(".d2-1").each(function(){
-        sum += +$(this).val();
+    $(document).on("change", ".d"+i+"-2", function(){
+        var sum = 0;
+        $(".d"+i+"-2").each(function(){
+            sum += +$(this).val();
+        })
+        
+        $("#tmd"+i).val(sum.toFixed(2));
     });
+}
+/* END total of each day */
 
-    $("#tpd2").val(sum);
-});
-$(document).on("change", '.d2-2', function(){
-    var sum = 0;
-    $(".d2-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmd2").val(sum.toFixed(2));
-});
-// d3
-$(document).on("change", ".d3-1", function() {
-    var sum = 0;
-    $(".d3-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpd3").val(sum);
-});
-$(document).on("change", '.d3-2', function(){
-    var sum = 0;
-    $(".d3-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmd3").val(sum.toFixed(2));
-});
-// d4
-$(document).on("change", ".d4-1", function() {
-    var sum = 0;
-    $(".d4-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpd4").val(sum);
-});
-$(document).on("change", '.d4-2', function(){
-    var sum = 0;
-    $(".d4-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmd4").val(sum.toFixed(2));
-});
-// d5
-$(document).on("change", ".d5-1", function() {
-    var sum = 0;
-    $(".d5-1").each(function(){
-        sum += +$(this).val();
-    });
-
-    $("#tpd5").val(sum);
-});
-$(document).on("change", '.d5-2', function(){
-    var sum = 0;
-    $(".d5-2").each(function(){
-        sum += +$(this).val();
-    })
-
-    $("#tmd5").val(sum.toFixed(2));
-});
 
 // Total de la semana
 $(document).on("change", ".sumSemana-1", function() {
@@ -370,13 +141,30 @@ $(document).on("change", ".sumSemana-2", function() {
 
 /* BEGIN current day selected*/ 
 $(document).ready(function(){
+    var intervalDay;
     var days = ['Domingo','Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes','Sabado'];
     var d = new Date();
     var dayName = days[d.getDay()];
+    var yesterday = days[d.getDay() - 1];
 
+    $("th:contains('" + dayName  + "')").css('backgroundColor','red');
+    $("th:contains('" + yesterday  + "')").css('backgroundColor','');
+    
+    //every day change color of head Day
+    intervalDay = setInterval(function(){
+        // console.log(days[d.getDay()]);s
+        $("th:contains('" + dayName  + "')").css('backgroundColor','red');
+        $("th:contains('" + yesterday + "')").css('backgroundColor','');
+    },1000 * 60 * 60 * 24 );
     // console.log(dayName);
 
-    $("th:contains('" + dayName + "')").css('backgroundColor','red');
 });
 
 /* END current day selected*/
+
+
+/* BEGIN rank of gestors */
+
+
+
+/* END rank of gestors */
