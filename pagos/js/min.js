@@ -59,7 +59,7 @@ for (let i = 1; i <= 12; i++) {
     $(document).on("change", ".g"+i+"-1" , function() {
         var sum = 0;
         $(".g"+i+"-1").each(function(){
-            sum += +$(this).val();
+            sum += +$(this).val(); 
         });
         
         $("#tpg"+i).val(sum);
@@ -68,19 +68,32 @@ for (let i = 1; i <= 12; i++) {
     $(document).on("change", ".g"+i+"-2", function(){
         var sum = 0;
         $(".g"+i+"-2").each(function(){
-            sum += +$(this).val();
+            sum += +$(this).val(); 
         })
         
         $("#tmg"+i).val(sum.toFixed(2));
-        // for (let j = 1; j <= 12; j++) { 
-        //     if(i = j)
-        //         continue;
-        //     else{
- 
-        //     }
-        // }
+        // rank();
     });
 }
+
+// function rank(){
+//     var gestors = [];
+
+//         for (let k = 1; k <= 12; k++) {
+
+//             gestors[k-1] = { g : 'g'+k , total : $('#tmg'+k).val()};
+//         } 
+
+//         gestors.sort((a,b) => a.total - b.total);
+//         var ar  = gestors.reverse();
+         
+//         for (const a of ar) {
+            
+//             document.getElementById('rank'+i).textContent = a.g;
+//         }
+            
+        
+// }
 /* END total of each gestor */
 
 /* BEGIN total of each day */
@@ -155,7 +168,7 @@ $(document).ready(function(){
         // console.log(days[d.getDay()]);s
         $("th:contains('" + dayName  + "')").css('backgroundColor','red');
         $("th:contains('" + yesterday + "')").css('backgroundColor','');
-    },1000 * 60 * 60 * 24 );
+    },1000 * 60 * 60 * 3 );
     // console.log(dayName);
 
 });
@@ -168,3 +181,7 @@ $(document).ready(function(){
 
 
 /* END rank of gestors */
+
+  
+
+ 
