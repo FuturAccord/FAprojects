@@ -156,23 +156,21 @@ $(document).on("change", ".sumSemana-2", function() {
 $(document).ready(function(){
     var intervalDay;
     var days = ['Domingo','Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes','Sabado'];
-    var d = new Date();
-    var dayName = days[d.getDay()];
-    var yesterday = days[d.getDay() - 1];
-
-    $("th:contains('" + dayName  + "')").css('backgroundColor','red');
-    $("th:contains('" + yesterday  + "')").css('backgroundColor','');
+    
     
     //every day change color of head Day
     intervalDay = setInterval(function(){
-        // console.log(days[d.getDay()]);s
-        $("th:contains('" + dayName  + "')").css('backgroundColor','red');
-        $("th:contains('" + yesterday + "')").css('backgroundColor','');
-    },1000 * 60 * 60 * 3 );
+    var d = new Date();
+    var dayName = days[d.getDay()]; 
+    $("th:contains('" + dayName  + "')").css('backgroundColor','red');
+    for(let i=1;i<=5;i++){
+        if(d.getDay() == i) continue;
+        $("th:contains('" + days[i] + "')").css('backgroundColor',''); 
+    }    
+    },1000 * 60 * 60 * 4 );
     // console.log(dayName);
 
-});
-
+}); 
 /* END current day selected*/
 
 
