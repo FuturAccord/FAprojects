@@ -163,7 +163,7 @@ $(document).ready(function(){
     var d = new Date();
     var dayName = days[d.getDay()]; 
     $("th:contains('" + dayName  + "')").css('backgroundColor','red');
-    for(let i=1;i<=5;i++){
+    for(let i=0; i < 7; i++){
         if(d.getDay() == i) continue;
         $("th:contains('" + days[i] + "')").css('backgroundColor',''); 
     }    
