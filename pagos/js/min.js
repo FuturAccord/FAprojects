@@ -154,6 +154,7 @@ $(document).on("change", ".sumSemana-2", function() {
 
 /* BEGIN current day selected*/ 
 var intervalDay;
+selectCurrentDay();
 
 //every day change color of head Day
 intervalDay = setInterval(function(){
