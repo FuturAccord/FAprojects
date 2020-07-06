@@ -1,4 +1,15 @@
 
+/* acronyms index */
+// .g = class gestor 
+// #tmg = id total money gestor
+// .d = class dia 
+// #tpg = id total payment gestor
+// #tpd = id total payment dia
+// #tmd = id total money dia
+// .sumSemana = class sum week 
+// #tpsemana = id total payment on week
+// #tmsemana = id total money on week
+
 //floatThead function allows us to stick the table head in top on scrolling down
 $(document).ready(function(){
     $(".sticky-header").floatThead({top:50});
@@ -72,7 +83,6 @@ for (let i = 1; i <= 12; i++) {
         })
         
         $("#tmg"+i).val(sum.toFixed(2));
-        // rank();
     });
 }
 
