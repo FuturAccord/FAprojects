@@ -8,11 +8,12 @@ html,body {
 table{
     margin-bottom: 0rem !important;
 }
-img {
+img#logo {
 width: 280px !important;
 height: 90px !important;
 margin: 15px 0;
 }
+ 
 
 *{
 margin: 0px;

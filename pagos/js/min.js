@@ -12,14 +12,27 @@
 
 //floatThead function allows us to stick the table head in top on scrolling down
 $(document).ready(function(){
-    $(".sticky-header").floatThead({top:50});
-
+    $(".sticky-header").floatThead({top:50}); 
 });
 
 /* BEGIN auto-scroll page */
 
 var speed = 50000; 
 var interval = null;  
+
+/* set egstors names */
+var gestors = ['Abdelhak', 'Adil', 'Amina', 'Driss', 'Ghizlane', 'Hind', 'Inmaculada', 'Sanae', 'Souad'];
+
+function setGestors(){
+    for (let i = 0; i < gestors.length; i++) {
+        document.querySelector("#g"+ (i+1) +" > td:nth-child(1)").textContent = gestors[i];
+    }
+}
+
+//Call of setGestors function
+setGestors();
+
+ 
 
 function start(){
     // //must put the  condition, if the interval not work
