@@ -155,9 +155,11 @@ cursor: pointer;
 
 /* begin input style */
 .pagosCumplitado{
-background-color: #ffb600;
-border-radius: 6px;
+    background-color: #ffb600;
+    border-radius: 5px;
+    box-shadow: 0px 0px 17px 2px black;
 }
+
 
 
 
