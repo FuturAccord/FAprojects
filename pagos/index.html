@@ -6,14 +6,14 @@
     <title>Pagos WeDeal</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600,900" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
     <link href="css/min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="context text-center ">
         <div id="image">
-            <img  src="./images/Wedeal_logo1.png " >
+            <img  src="./images/Wedeal_logo1.png " id="logo" >
         </div>
         <div class="manageScroll" >
             <i id ="play" onclick="start()" readonly="" class="fas fa-play-circle button"></i>
@@ -35,10 +35,11 @@
 
                     <th class="totalPorGestor"><h5><strong>Total por gestor</strong></h5></th>
                 </thead>
+                <tbody></tbody>
+                
                 <tr id="g1">
                     <td>
-                        <strong>Abdelhak<strong>
-                        <!-- <span class="rank">1</span> -->
+                        <span class="rank" id="rank1"></span>
                     </td>
                     <td>
                         <table class="table table-borderless">
@@ -84,7 +85,9 @@
                     </td>
                 </tr>
                 <tr id="g2">
-                    <td><strong>Adil<strong></td>
+                    <td> 
+                        <span class="rank" id="rank2"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -129,8 +132,10 @@
                     </td>
                 </tr>
                 <tr id="g3">
-                    <td><strong>Alia<strong></td>
                     <td>
+                        <span class="rank" id="rank3"></span>
+                    </td>
+                        <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
                             <tr><td><span id='s'>total</span></td></tr>
@@ -174,7 +179,9 @@
                     </td>
                 </tr>
                 <tr id="g4">
-                    <td><strong>Amina<strong></td>
+                    <td>
+                        <span class="rank" id="rank4"></span>
+                    </td>    
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -219,7 +226,9 @@
                     </td>
                 </tr>
                 <tr id="g5">
-                    <td><strong>Amine<strong></td>
+                    <td>
+                        <span class="rank" id="rank5"></span>
+                    </td>     
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -264,7 +273,9 @@
                     </td>
                 </tr>
                 <tr id="g6">
-                    <td><strong>Driss<strong></td>
+                    <td>
+                        <span class="rank" id="rank6"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -308,9 +319,10 @@
                         </table>
                     </td>
                 </tr>
-
                 <tr id="g7">
-                    <td><strong>Ghizlane<strong></td>
+                    <td>
+                        <span class="rank" id="rank7"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -355,7 +367,9 @@
                     </td>
                 </tr>
                 <tr id="g8">
-                    <td><strong>Hind<strong></td>
+                    <td>
+                        <span class="rank" id="rank8"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -400,7 +414,9 @@
                     </td>
                 </tr>
                 <tr id="g9">
-                    <td><strong>Inmaculada<strong></td>
+                    <td>
+                        <span class="rank" id="rank9"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -408,9 +424,9 @@
                         </table>
                     </td>
                     <td>
-                        <table class="table table-borderless">
-                            <tr><td>  <input class="sumSemana-1 inputs g9-1 d1-1" type="text" name="" value="0" ></td></tr>
-                            <tr><td>€<input class="sumSemana-2 inputs g9-2 d1-2" type="text" name="" value="0" ></td></tr>
+                    <table class="table table-borderless">
+                        <tr><td>  <input class="sumSemana-1 inputs g9-1 d1-1" type="text" name="" value="0" ></td></tr>
+                        <tr><td>€<input class="sumSemana-2 inputs g9-2 d1-2" type="text" name="" value="0" ></td></tr>
                         </table>
                     </td>
                     <td>
@@ -445,7 +461,9 @@
                     </td>
                 </tr>
                 <tr id="g10">
-                    <td><strong>Sanae<strong></td>
+                    <td>
+                        <span class="rank" id="rank10"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -490,7 +508,9 @@
                     </td>
                 </tr>
                 <tr id="g11">
-                    <td><strong>Souad<strong></td>
+                    <td>
+                        <span class="rank" id="rank11"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -534,8 +554,10 @@
                         </table>
                     </td>
                 </tr>
-                <tr id="g12">
-                    <td><strong>Yahia<strong></td>
+                <!-- <tr id="g12">
+                    <td>
+                        <span class="rank" id="rank12"></span>
+                    </td>
                     <td>
                         <table class="table table-borderless ">
                             <tr><td><span id='s'>Pagos</span></td></tr>
@@ -578,7 +600,7 @@
                             <tr><td>€<input class=" inputs " readonly="true" type="text" name="" value="0"  id="tmg12"></td></tr>
                         </table>
                     </td>
-                </tr>
+                </tr> -->
                 <tr id="dias">
                     <td><strong>Total por día<strong></td>
                     <td>
@@ -632,16 +654,18 @@
 
             </table>
         </div>
-        <!-- <div id="rank">
+        <!-- <div class="rank" id="rank">
             <h1>Hiddddddddddddfdsfffffffffffffffsssssssssdffffffffffffsdfsdfdsfsdfdsfdfsdfdfddddddddddddddddddddddddddddddddnkm,,,,,,,,,m,m,mm,ml,m,m,m,m,m,m,m,lllllllllllml,,,,,,,,,ddddddddddddddddddddddddd</h1>
         </div> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script> 
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.2.1/jquery.floatThead.js"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.2.1/jquery.floatThead.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/font-awesome5.12.0-2.all.min.js"></script>  
+        
+        <!-- float header table -->
+        <script src="js/jquery.floatThead.min.js"></script>
         <script src="js/min.js"></script> 
-
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"></script> 
+        
 
 </body>
 </html>

@@ -1,14 +1,38 @@
 
+/* acronyms index */
+// .g = class gestor 
+// #tmg = id total money gestor
+// .d = class dia 
+// #tpg = id total payment gestor
+// #tpd = id total payment dia
+// #tmd = id total money dia
+// .sumSemana = class sum week 
+// #tpsemana = id total payment on week
+// #tmsemana = id total money on week
+
 //floatThead function allows us to stick the table head in top on scrolling down
 $(document).ready(function(){
-    $(".sticky-header").floatThead({top:50});
-
+    $(".sticky-header").floatThead({top:50}); 
 });
 
 /* BEGIN auto-scroll page */
 
 var speed = 50000; 
 var interval = null;  
+
+/* set egstors names */
+var gestors = ['Abdelhak', 'Adil', 'Amina', 'Driss', 'Ghizlane', 'Hind', 'Inmaculada','Mohammed', 'Sanae', 'Souad', 'Youssef'];
+
+function setGestors(){
+    for (let i = 0; i < gestors.length; i++) {
+        document.querySelector("#g"+ (i+1) +" > td:nth-child(1)").textContent = gestors[i];
+    }
+}
+
+//Call of setGestors function
+setGestors();
+
+ 
 
 function start(){
     // //must put the  condition, if the interval not work
@@ -59,7 +83,7 @@ for (let i = 1; i <= 12; i++) {
     $(document).on("change", ".g"+i+"-1" , function() {
         var sum = 0;
         $(".g"+i+"-1").each(function(){
-            sum += +$(this).val();
+            sum += +$(this).val(); 
         });
         
         $("#tpg"+i).val(sum);
@@ -68,19 +92,31 @@ for (let i = 1; i <= 12; i++) {
     $(document).on("change", ".g"+i+"-2", function(){
         var sum = 0;
         $(".g"+i+"-2").each(function(){
-            sum += +$(this).val();
+            sum += +$(this).val(); 
         })
         
         $("#tmg"+i).val(sum.toFixed(2));
-        // for (let j = 1; j <= 12; j++) { 
-        //     if(i = j)
-        //         continue;
-        //     else{
- 
-        //     }
-        // }
     });
 }
+
+// function rank(){
+//     var gestors = [];
+
+//         for (let k = 1; k <= 12; k++) {
+
+//             gestors[k-1] = { g : 'g'+k , total : $('#tmg'+k).val()};
+//         } 
+
+//         gestors.sort((a,b) => a.total - b.total);
+//         var ar  = gestors.reverse();
+         
+//         for (const a of ar) {
+            
+//             document.getElementById('rank'+i).textContent = a.g;
+//         }
+            
+        
+// }
 /* END total of each gestor */
 
 /* BEGIN total of each day */
@@ -140,26 +176,24 @@ $(document).on("change", ".sumSemana-2", function() {
 
 
 /* BEGIN current day selected*/ 
-$(document).ready(function(){
-    var intervalDay;
+var intervalDay;
+selectCurrentDay();
+//every day change color of head Day
+intervalDay = setInterval(function(){
+    selectCurrentDay();   
+},1000 * 60 * 60 * 4 );
+// console.log(dayName);
+
+function selectCurrentDay(){
     var days = ['Domingo','Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes','Sabado'];
     var d = new Date();
-    var dayName = days[d.getDay()];
-    var yesterday = days[d.getDay() - 1];
-
+    var dayName = days[d.getDay()]; 
     $("th:contains('" + dayName  + "')").css('backgroundColor','red');
-    $("th:contains('" + yesterday  + "')").css('backgroundColor','');
-    
-    //every day change color of head Day
-    intervalDay = setInterval(function(){
-        // console.log(days[d.getDay()]);s
-        $("th:contains('" + dayName  + "')").css('backgroundColor','red');
-        $("th:contains('" + yesterday + "')").css('backgroundColor','');
-    },1000 * 60 * 60 * 24 );
-    // console.log(dayName);
-
-});
-
+    for(let i=0; i < 7; i++){
+        if(d.getDay() == i) continue;
+        $("th:contains('" + days[i] + "')").css('backgroundColor',''); 
+    } 
+}
 /* END current day selected*/
 
 
@@ -168,3 +202,7 @@ $(document).ready(function(){
 
 
 /* END rank of gestors */
+
+  
+
+ 
