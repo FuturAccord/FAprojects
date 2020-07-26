@@ -21,7 +21,7 @@ var speed = 50000;
 var interval = null;  
 
 /* set egstors names */
-var gestors = ['Abdelhak', 'Adil', 'Amina', 'Driss', 'Ghizlane', 'Hind', 'Inmaculada', 'Sanae', 'Souad'];
+var gestors = ['Abdelhak', 'Adil', 'Amina', 'Driss', 'Ghizlane', 'Hind', 'Inmaculada','Mohammed', 'Sanae', 'Souad', 'Youssef'];
 
 function setGestors(){
     for (let i = 0; i < gestors.length; i++) {
@@ -143,7 +143,7 @@ for (let i = 1; i <= 5; i++) {
 }
 /* END total of each day */
 
-
+ 
 // Total de la semana
 $(document).on("change", ".sumSemana-1", function() {
     var sum = 0;
@@ -151,7 +151,8 @@ $(document).on("change", ".sumSemana-1", function() {
         sum += +$(this).val();
         if($(this).val() >= 1){
             // $(this).css({'backgroundColor':'red', 'border-radius':'50%'});
-            $(this).parents(".table-borderless").addClass("pagosCumplitado");
+            $(this).parents(".table-borderless").addClass("pagosCumplitado"); 
+
 
         }else
         {
@@ -166,8 +167,11 @@ $(document).on("change", ".sumSemana-2", function() {
     var sum = 0;
     $(".sumSemana-2").each(function(){
         sum += +$(this).val();
+        //play sound notification 
+        
     });
-
+    var audio = new Audio("mp3/notification3.mp3");
+        audio.play();
     $("#tmsemana").val(sum.toFixed(2));
 }); 
 
