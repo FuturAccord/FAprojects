@@ -167,11 +167,13 @@ $(document).on("change", ".sumSemana-2", function() {
     var sum = 0;
     $(".sumSemana-2").each(function(){
         sum += +$(this).val();
-        //play sound notification 
         
     });
+
+    //play sound notification 
     var audio = new Audio("mp3/notification3.mp3");
         audio.play();
+        
     $("#tmsemana").val(sum.toFixed(2));
 }); 
 
