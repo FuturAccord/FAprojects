@@ -122,7 +122,7 @@ function starsRank(totalOfWeek , indexAgent){
         document.getElementById("star1-"+"g" + indexAgent).classList.toggle("far");    
         document.getElementById("star2-"+"g" + indexAgent).classList.toggle("far");
         document.getElementById("star3-"+"g" + indexAgent).classList.toggle("far");
-    }else if(totalOfWeek >= 100 && totalOfWeek < 250 ){
+    }else if(totalOfWeek >= 100 && totalOfWeek < 200 ){
 
         document.getElementById("star1-"+"g" + indexAgent).classList.add("golden-star");    
         document.getElementById("star2-"+"g" + indexAgent).classList.remove("golden-star");   
@@ -131,7 +131,7 @@ function starsRank(totalOfWeek , indexAgent){
         document.getElementById("star1-"+"g" + indexAgent).classList.toggle("fas");
         document.getElementById("star2-"+"g" + indexAgent).classList.toggle("far");
         document.getElementById("star3-"+"g" + indexAgent).classList.toggle("far");
-    }else if(totalOfWeek >= 250 && totalOfWeek < 500){
+    }else if(totalOfWeek >= 200 && totalOfWeek < 300){
         
         document.getElementById("star1-"+"g" + indexAgent).classList.add("golden-star");    
         document.getElementById("star2-"+"g" + indexAgent).classList.add("golden-star");   
