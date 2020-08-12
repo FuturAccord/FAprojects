@@ -20,12 +20,17 @@ $(document).ready(function(){
 var speed = 50000; 
 var interval = null;  
 
-/* set egstors names */
-var gestors = ['Abdelhak', 'Adil', 'Amina', 'Driss', 'Ghizlane', 'Hind', 'Inmaculada','Mohammed', 'Sanae', 'Souad', 'Youssef'];
+/* set aggents names */
+var gestors = ['Abdelhak', 'Adil', 'Amina', 'Chaimae', 'Driss', 'Ghizlane', 'Hicham','Hind', 'Inmaculada', 'Sanae', 'Souad', 'Youssef'];
 
 function setGestors(){
+    //set agents names and empty stars rating
     for (let i = 0; i < gestors.length; i++) {
-        document.querySelector("#g"+ (i+1) +" > td:nth-child(1)").textContent = gestors[i];
+        document.querySelector("#g" + (i+1) +"> td:nth-child(1)").innerHTML = "<h1>" + gestors[i] + "</h1>" + 
+        "       <i class='far fa-star'  id='star1-g"+ (i+1)
+        +"'></i><i class='far fa-star'  id='star2-g"+ (i+1)
+        +"'></i><i class='far fa-star'  id='star3-g"+ (i+1)
+        +"'></i>"; 
     }
 }
 
@@ -33,7 +38,7 @@ function setGestors(){
 setGestors();
 
  
-
+// Start the autoScroll
 function start(){
     // //must put the  condition, if the interval not work
     // if(!started){
@@ -61,8 +66,7 @@ function pause(){
     $('html, body').stop();
     clearInterval(interval);
     $('#pause').css("display","none");
-    $('#play').css("display", "inline");
-
+    $('#play').css("display", "inline"); 
     
 } 
 
@@ -96,27 +100,58 @@ for (let i = 1; i <= 12; i++) {
         })
         
         $("#tmg"+i).val(sum.toFixed(2));
+
+        //call of satarsRank function
+        starsRank(sum, i); 
+
     });
 }
 
-// function rank(){
-//     var gestors = [];
 
-//         for (let k = 1; k <= 12; k++) {
-
-//             gestors[k-1] = { g : 'g'+k , total : $('#tmg'+k).val()};
-//         } 
-
-//         gestors.sort((a,b) => a.total - b.total);
-//         var ar  = gestors.reverse();
-         
-//         for (const a of ar) {
-            
-//             document.getElementById('rank'+i).textContent = a.g;
-//         }
-            
+//this function add and remove stars of each agents acording to total of week earned
+function starsRank(totalOfWeek , indexAgent){
+    //One star for 100 euros up
+    //Two stars for total btween 250 and 499 euros
+    //Three stars for 500 euros up
+    if(totalOfWeek < 100){
         
-// }
+        document.getElementById("star1-"+"g" + indexAgent).classList.remove("golden-star");    
+        document.getElementById("star2-"+"g" + indexAgent).classList.remove("golden-star");    
+        document.getElementById("star3-"+"g" + indexAgent).classList.remove("golden-star");    
+        
+        document.getElementById("star1-"+"g" + indexAgent).classList.toggle("far");    
+        document.getElementById("star2-"+"g" + indexAgent).classList.toggle("far");
+        document.getElementById("star3-"+"g" + indexAgent).classList.toggle("far");
+    }else if(totalOfWeek >= 100 && totalOfWeek < 250 ){
+
+        document.getElementById("star1-"+"g" + indexAgent).classList.add("golden-star");    
+        document.getElementById("star2-"+"g" + indexAgent).classList.remove("golden-star");   
+        document.getElementById("star3-"+"g" + indexAgent).classList.remove("golden-star");   
+
+        document.getElementById("star1-"+"g" + indexAgent).classList.toggle("fas");
+        document.getElementById("star2-"+"g" + indexAgent).classList.toggle("far");
+        document.getElementById("star3-"+"g" + indexAgent).classList.toggle("far");
+    }else if(totalOfWeek >= 250 && totalOfWeek < 500){
+        
+        document.getElementById("star1-"+"g" + indexAgent).classList.add("golden-star");    
+        document.getElementById("star2-"+"g" + indexAgent).classList.add("golden-star");   
+        document.getElementById("star3-"+"g" + indexAgent).classList.remove("golden-star");   
+
+        document.getElementById("star1-"+"g" + indexAgent).classList.toggle("fas");
+        document.getElementById("star2-"+"g" + indexAgent).classList.toggle("fas");
+        document.getElementById("star3-"+"g" + indexAgent).classList.toggle("far");
+    }else{
+        // document.getElementById("g" + indexAgent).style();
+        document.getElementById("star1-"+"g" + indexAgent).classList.add("golden-star");    
+        document.getElementById("star2-"+"g" + indexAgent).classList.add("golden-star");   
+        document.getElementById("star3-"+"g" + indexAgent).classList.add("golden-star");   
+
+        document.getElementById("star1-"+"g" + indexAgent).classList.toggle("fas");
+        document.getElementById("star2-"+"g" + indexAgent).classList.toggle("fas");
+        document.getElementById("star3-"+"g" + indexAgent).classList.toggle("fas");
+    }
+}
+
 /* END total of each gestor */
 
 /* BEGIN total of each day */

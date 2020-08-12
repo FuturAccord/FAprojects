@@ -3,7 +3,7 @@ html,body {
     font-family: 'Nunito', sans-serif !important;
     font-weight: 200 !important;
     overflow:hidden; /* Hide scrollbars */
-
+    margin-bottom: -25px !important;
 }
 table{
     margin-bottom: 0rem !important;
@@ -195,4 +195,10 @@ span.rank {
     color: #FFF59D;
 }
 
+.far .fa-star{
+    color: #797979;
+}
 
+.golden-star{
+    color: #ffb600;
+}
